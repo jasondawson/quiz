@@ -1,0 +1,13 @@
+<div>
+	<div ng-if="question">
+		<h2> {{question.title}} </h2>
+		<div>
+			<div ng-repeat="choice in question.choices">
+				<input ng-checked="answers[question.id] === choice" ng-click="update(choice)" name="answer" type="radio"> {{ choice }}
+				<br>
+			</div>
+		</div>
+		<br />
+		<button ng-click="saveAnswer(selected)"> Save and Continue </button>
+	</div>
+</div>

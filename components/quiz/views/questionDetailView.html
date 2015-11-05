@@ -1,0 +1,10 @@
+<div>
+	<div ng-if="currentQuestion.qtype === 'multiple'">
+		<multiple-choice question="currentQuestion" save="saveAnswer(id, answer)" answers="answers"></multiple-choice>
+		<br />
+	</div>
+	<div ng-if="currentQuestion.qtype === 'blank'">
+		<fill-blank question="currentQuestion" save="saveAnswer(id, answer)" answers="answers"></fill-blank>
+		<br />
+	</div>
+</div>

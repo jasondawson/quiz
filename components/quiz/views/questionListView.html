@@ -1,0 +1,18 @@
+<div>
+	<div>
+		<button ng-click="saveMyAnswers()">Save Answers</button>
+		<button ng-click="checkMyAnswers()">Check Answers</button>
+		<button ng-click="reset()">Reset</button>
+			<input name="checkAnswers" type="checkbox" ng-model="obj.instant" ng-click="checkForResults()">
+	<label for="checkAnswers">Instant Gratification</label>
+	</div>
+	<div ng-repeat="question in questions track by question.id">
+		<p ng-click="setCurrentQuestion(question)"><span ng-class="{'bold': question === currentQuestion}">{{question.id}}. {{question.title}} </span></p>
+		
+		<span ng-if="results.done || obj.instant">
+		<span ng-if="results[question.id]"><i class="fa fa-check fa-lg green"></i></span>
+		<span ng-if="!results[question.id] && answers[question.id]"><i class="fa fa-times fa-lg red"></i></span>
+		</span>
+			<span> {{answers[question.id]}} </span>
+	</div>
+</div>
