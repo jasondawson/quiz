@@ -6,7 +6,7 @@ app.run(function ($rootScope, $state) {
 		console.log('error', error);
 	});
 	
-	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+	$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 		if(toState.name === 'quiz') {
 			event.preventDefault();
 			$state.go('quiz.view', toParams)
@@ -26,6 +26,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			resolve: {
 				quizList: function (quizService) {
 					return quizService.getQuizNames();
+				},
+				pastQuizList: function (quizService) {
+					return quizService.getPastQuizzes();
 				}
 			}
 		})
@@ -34,7 +37,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'components/quiz/views/quizContainerView.html',
 			controller: 'QuizCtrl',
 			resolve: {
-				questions: function (quizService, $state, $stateParams) {
+				questions: function (quizService, $stateParams) {
 					var name = $stateParams.quizName
 					return quizService.getQuestions(name);
 				}
@@ -45,11 +48,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			parent: 'quiz',
 			views: {
 				'list': {
-					templateUrl: 'components/quiz/views/questionListView.html'
+					templateUrl: 'components/quiz/views/questionListWrapperView.html'
 				},
 				'detail': {
 					templateUrl: 'components/quiz/views/questionDetailView.html'
 				}
+			}
+		})
+		.state('results', {
+			url: '/results',
+			templateUrl: 'components/results/resultsView.html',
+			controller: 'ResultsCtrl',
+			params: {
+				quizName: '',
+				quiz: ''	
+			},
+			resolve: {
+				answers: function (quizService, $stateParams) {
+					var quizName = $stateParams.quizName;
+					var quiz = $stateParams.quiz;
+					return quizService.getAnswers(quizName, quiz);
+				},
+				questions: function (quizService, $stateParams) {
+					var name = $stateParams.quizName
+					return quizService.getQuestions(name);
+				} 	
 			}
 		})
 

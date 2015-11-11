@@ -3,7 +3,7 @@
 		<h2> {{formattedQuestion}} </h2>
 
 		<br />
-		<input type="text" placeholder="Your answer here" ng-model="answer" />
+		<input type="text" placeholder="Your answer here" ng-model="answer" ng-keyup="handleEnter($event, answer)"/>
 		<br />
 		<button ng-click="saveAnswer(answer)"> Save and Continue </button>
 	</div>

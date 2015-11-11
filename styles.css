@@ -60,3 +60,15 @@ header {
 .red {
 	color: red;
 }
+
+.mySaveModal {
+	position: fixed;
+	top: 80px;
+	left: 80px;
+	height: 80px;
+	width: 40%;
+	background-color: lightgrey;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+}

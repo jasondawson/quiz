@@ -3,3 +3,12 @@
 <div ng-repeat="item in quizzes">
 	<a ui-sref="quiz.view({quizName: item.name})"> {{item.displayName}}</a>
 </div>
+
+<h1> View Past Quizzes </h1>
+<div ng-repeat="quizName in pastQuizzes">
+	{{ quizName.$id }}
+	<div ng-repeat="(quiz, value) in quizName">
+		<a ng-if="value.name" ui-sref="results({quizName: $parent.quizName.$id, quiz: quiz})">{{value.name}}</a>
+		<a ng-if="!value.name" ui-sref="results({quizName: $parent.quizName.$id, quiz: quiz})">{{quiz}}</a>
+	</div>
+</div>

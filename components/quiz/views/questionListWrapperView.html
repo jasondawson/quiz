@@ -1,0 +1,20 @@
+<div>
+	<div ng-if="saving">
+		<div ng-include="'components/quiz/partials/saveQuizPrompt.html'"></div>
+	</div>
+	<div>
+		<button ng-click="savePrompt()">Save Answers</button>
+		<button ng-click="checkMyAnswers()">Check Answers</button>
+		<button ng-click="reset()">Reset</button>
+		<input name="checkAnswers" type="checkbox" ng-model="obj.instant" ng-click="checkForResults()">
+		<label for="checkAnswers">Instant Gratification</label>
+	</div>
+	<question-list
+		questions="questions"
+		answers="answers"
+		results="results"
+		current-question="currentQuestion"
+		set-current-question="setCurrentQuestion"
+		>
+		</question-list>
+</div>
