@@ -1,0 +1,77 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  width: 100%;
+  height: 45px;
+  margin: 0;
+}
+header ul {
+  padding: 2%;
+  margin: 0;
+  background-color: black;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
+}
+header ul li a:hover {
+  color: orange;
+}
+.quizContainer {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.detailContainer {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list {
+  overflow: auto;
+  margin: 0;
+  padding: 20px;
+  flex: 1 1 0;
+  height: 100%;
+  min-height: 100%;
+  background: white;
+}
+.detailWrapper {
+  margin: 0;
+  padding: 20px;
+  flex: 1 1 0;
+  height: 100%;
+  min-height: 100%;
+  background: lightblue;
+}
+.bold {
+  font-size: 18px;
+  font-weight: bold;
+  /*background: wheat;*/
+  border-bottom: 1px dashed black;
+}
+.blue {
+  color: dodgerblue;
+}
+.orange {
+  color: orange;
+}
+.mySaveModal {
+  position: fixed;
+  top: 80px;
+  left: 80px;
+  height: 80px;
+  width: 40%;
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+}
