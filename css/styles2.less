@@ -3,8 +3,10 @@
 // VARIABLES, MIXINS, ETC
 
 @font: 'Roboto', sans-serif;
-
-
+@orange: rgb(255,84,35);    
+@dkorange: rgb(204,66,29);
+@ltgrey: #EFEFEF; 
+@white: rgb(254,254,254);
 
 // GLOBAL STYLES
 
@@ -14,26 +16,43 @@
 
 body {
   font-family: @font;
+  margin: 0;
+  padding: 0;
+}
+
+//h1 {
+//  color: @orange;
+//}
+
+.quizzes {
+  background-color: @ltgrey;
+  background-image: url()
+}
+
+.past-quizzes {
+  color: @white;
+  background-color: @orange;
+  border-top: 4px solid @dkorange;
 }
 
 header {
   width: 100%;
   height: 45px;
   margin: 0;
+  background-color: black;
   
   ul {
     padding: 2%;
-    margin: 0;
-    background-color: black;
+    margin: 0;    
     
     li {
       list-style: none;
       
       a {
         text-decoration: none;
-        color: white;
+        color: @white;
         &:hover {
-          color: orange;
+          color: @orange;
         }
       }
     }
@@ -64,7 +83,7 @@ header {
 	flex: 1 1 0;
 	height: 100%;
 	min-height: 100%;
-	background: white;
+	background: @white;
 }
 
 .detailWrapper {
@@ -73,7 +92,7 @@ header {
 	flex: 1 1 0;
 	height: 100%;
 	min-height: 100%;
-	background: lightblue;
+	background: @ltgrey;
 }
 
 .bold {
@@ -83,7 +102,7 @@ header {
 	border-bottom: 1px dashed black;
 }
 
-.blue {
+.blue {      // was green
 	color: dodgerblue;
 }
 
@@ -97,13 +116,20 @@ header {
 	left: 80px;
 	height: 80px;
 	width: 40%;
-	background-color: lightgrey;
+	background-color: @ltgrey;
 	border: 1px solid black;
 	border-radius: 5px;
 	margin: 0 auto;
 }
 
-
+a {
+  text-decoration: none;
+  color: black;
+  
+  &:hover {
+    color: @orange;
+  }
+}
 
 // HOME VIEW
 
