@@ -20,10 +20,10 @@
 
 
 // GLOBAL STYLES
-
-* {
-  outline: 1px dotted red;
-}
+//
+//* {
+//  outline: 1px dotted red;
+//}
 
 body {
   min-height: 100%;
@@ -31,10 +31,6 @@ body {
   font-family: @font;
   margin: 0;
   padding: 0;
-  
-  .ng-scope {
-    min-height: 100%;
-  }
 }
 
 
@@ -155,7 +151,7 @@ header {
 
 
 .quizContainer {
-	height: 80%;
+	min-height: 600px;
 	width: 100%;
 	display: flex;
 	align-items: stretch;
@@ -200,11 +196,11 @@ header {
 	border-bottom: 1px dashed black;
 }
 
-.blue {      // was green
+.blue {     
 	color: @dkcyan;
 }
 
-.orange {    // was red
+.orange {   
 	color: @false;
 }
 
@@ -216,6 +212,7 @@ header {
 	width: 40%;
 	background-color: @dkcyan;
   color: @dkgrey2;
+  font-weight: bold;
 	border: 1px solid @dkcyan;
 	margin: 0 auto;
   padding: 2% 1%;
@@ -234,15 +231,6 @@ header {
   }
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  
-  &:hover {
-    color: @dkyellow;
-  }
-}
-
 button {
   background-color: @dkyellow;
   border: 2px solid @dkyellow2;
@@ -254,6 +242,8 @@ button {
   text-transform: uppercase;
 }
 
+
+// doesn't work
 input[type="checkbox"] {
   color: @dkcyan;
 }
