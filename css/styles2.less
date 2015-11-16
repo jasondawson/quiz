@@ -13,16 +13,17 @@
 @white: rgb(254,254,254);
 @offwhite: rgb(246,246,246);
 @dkcyan: rgb(0,191,255);
+@dkcyan2: darken(@dkcyan, 15%);
 @false: #FA0808; 
 
 
 
 
 // GLOBAL STYLES
-//
-//* {
-//  outline: 1px dotted red;
-//}
+
+* {
+  outline: 1px dotted red;
+}
 
 body {
   min-height: 100%;
@@ -30,6 +31,10 @@ body {
   font-family: @font;
   margin: 0;
   padding: 0;
+  
+  .ng-scope {
+    min-height: 100%;
+  }
 }
 
 
@@ -76,7 +81,7 @@ header {
     padding: 3% 0 3% 0;
     width: 50%;
     text-align: center;
-    font-size: 2.5em
+    font-size: 3em
   }
 
     .ng-scope {
@@ -91,7 +96,7 @@ header {
         padding-bottom: 1%;
         margin-bottom: 1%;
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 1.5em;
         text-transform: uppercase;
         
         &:hover {
@@ -125,11 +130,13 @@ header {
     padding-bottom: 1%;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1em;
 
     div.ng-scope {
       padding-left: 0;
       width: 100%;
     }
+    
     a {
       display: block;
       text-align: center;
@@ -205,12 +212,26 @@ header {
 	position: fixed;
 	top: 80px;
 	left: 80px;
-	height: 80px;
+	height: 110px;
 	width: 40%;
-	background-color: @ltgrey;
-	border: 1px solid black;
-	border-radius: 5px;
+	background-color: @dkcyan;
+  color: @dkgrey2;
+	border: 1px solid @dkcyan;
 	margin: 0 auto;
+  padding: 2% 1%;
+  
+  input {
+    width: 80%;
+    height: 25px;
+    color: @dkgrey;
+    padding-left: 2%;
+    border: 0;
+    margin: 1.5% 3%;
+  }
+  
+  button {
+    margin: 1.5% 3%;
+  }
 }
 
 a {
@@ -231,4 +252,8 @@ button {
   font-weight: bold;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+  color: @dkcyan;
 }
