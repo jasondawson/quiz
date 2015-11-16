@@ -7,7 +7,9 @@
 		<button ng-click="checkMyAnswers()">Check Answers</button>
 		<button ng-click="reset()">Reset</button>
 		<input name="checkAnswers" type="checkbox" ng-model="obj.instant" ng-click="checkForResults()">
-		<label for="checkAnswers">Instant Gratification</label>
+		<label for="checkAnswers">
+      <span>Instant Gratification</span>
+    </label>
 	</div>
 	<question-list
 		questions="questions"

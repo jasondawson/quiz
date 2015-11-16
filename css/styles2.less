@@ -25,7 +25,7 @@
 //}
 
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: @font;
   margin: 0;
@@ -49,10 +49,11 @@ header {
       
       a {
         text-decoration: none;
-        color: @white;
+        color: @dkyellow;
         font-weight: bold;
+        
         &:hover {
-          color: @yellow;
+          color: @dkcyan;
         }
       }
     }
@@ -151,11 +152,12 @@ header {
 	width: 100%;
 	display: flex;
 	align-items: stretch;
+  background: @ltgrey;
 }
 
 .detailContainer {
 	margin: 0;
-	height: 100%;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -167,19 +169,20 @@ header {
 	margin: 0;
 	padding: 20px;
 	flex: 1 1 0;
-	height: 100%;
 	min-height: 100%;
-//	background: @white;
   background-color: @dkgrey;
   background-image: url(../images/grey_squares2.png);
   color: @ltgrey;
+  
+  h1 {
+    color: @dkyellow;
+  }
 }
 
 .detailWrapper {
 	margin: 0;
 	padding: 20px;
 	flex: 1 1 0;
-	height: 100%;
 	min-height: 100%;
 	background: @ltgrey;
 }
@@ -187,7 +190,6 @@ header {
 .bold {
 	font-size: 18px;
 	font-weight: bold;
-	/*background: wheat;*/
 	border-bottom: 1px dashed black;
 }
 
@@ -224,6 +226,7 @@ button {
   background-color: @dkyellow;
   border: 2px solid @dkyellow2;
   padding: 5px;
+  margin: 1%;
   font-family: @font;
   font-weight: bold;
   letter-spacing: 0.1em;
