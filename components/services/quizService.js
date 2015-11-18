@@ -1,10 +1,8 @@
 var app = angular.module('quizApp');
 
 app.service('quizService', function ($q, $firebaseObject, $firebaseArray) {
-
-	//TODO remove firebaseUrl before pushing to git
 	
-	var firebaseUrl = 'https://jcd.firebaseio.com/quiz'
+	var firebaseUrl = '<your firebase url>'
 
 	var quizzes = new Firebase(firebaseUrl + '/quizzes');
 	var quizzesObj = $firebaseObject(quizzes);
