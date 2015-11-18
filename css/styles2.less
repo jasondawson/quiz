@@ -1,0 +1,263 @@
+// QUIZ STYLES
+
+// VARIABLES, MIXINS, ETC
+
+@font: 'Roboto', sans-serif;
+@yellow: rgb(250,210,81);    
+@dkyellow: rgb(255,213,64);
+@dkyellow2: darken(@dkyellow, 15%);
+@ltgrey: rgb(228,228,228);
+@mdgrey: rgb(51,51,51);
+@dkgrey: #010101;
+@dkgrey2: lighten(@dkgrey, 10%);
+@white: rgb(254,254,254);
+@offwhite: rgb(246,246,246);
+@dkcyan: rgb(0,191,255);
+@dkcyan2: darken(@dkcyan, 12%);  // rgb(0,160,224)
+@false: #FA0808; 
+@cyan: cyan;
+
+.h1 {
+  margin: 0 auto;
+  padding: 3% 0;
+  width: 50%;
+  text-align: center;
+}
+
+.margin-width {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.double-border {
+  
+}
+
+// GLOBAL STYLES
+//
+//* {
+//  outline: 1px dotted white;
+//}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  font-family: @font;
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/light_grey.png);
+  background-repeat: repeat;
+}
+
+
+header {
+  width: 100%;
+  height: 5%;
+  background-color: @dkgrey;
+  border-bottom: 3px solid @dkyellow2;
+  
+  ul {
+    padding: 2%;
+    margin: 0;  
+    
+    li {
+      list-style: none;
+      margin-top: -0.5%;
+      
+      a {
+        text-decoration: none;
+        color: @dkcyan;
+        font-weight: bold;
+        
+        &:hover {
+          color: @dkyellow2;
+        }
+      }
+    }
+  }
+}
+
+
+.quizzes {
+  .margin-width;
+  padding: 5% 0 5% 5%;
+  height: 100%;
+  background-color: @dkgrey;
+  background-image: url(../images/grey_squares2.png);
+  background-size: contain;
+  color: @white;
+  
+  h1 {
+    .h1;
+    font-size: 3em;
+    text-shadow: 0px 2px 0 rgba(0,0,0,0.6), 0px 2px 3px rgba(140,140,140, 0.67);
+  }
+
+    .ng-scope {
+      .margin-width;
+      
+      a {
+        display: block;
+        color: @dkyellow;
+        text-decoration: none;
+        text-align: center;
+        padding-bottom: 1%;
+        margin-bottom: 1%;
+        font-weight: bold;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        
+        &:hover {
+          color: @dkcyan;
+        }
+      }
+    }  
+}
+
+.past-quizzes {
+  .margin-width;
+  padding: 2% 0 5% 5%;
+  height: 100%;
+  color: @dkgrey;
+  background-color: @yellow;
+  border-top: 5px solid @dkyellow2;
+  
+   h1 {
+    .h1;
+    font-size: 2.5em;
+    text-shadow: 0px 2px 0 rgba(0,0,0,0.6), 0px 2px 3px rgba(140,140,140, 0.67);
+  }
+  
+  div {
+    .margin-width;
+    text-align: center;
+    padding-bottom: 1%;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+
+    div.ng-scope {
+      padding-left: 0;
+      width: 100%;
+    }
+    
+    a {
+      display: block;
+      text-align: center;
+      color: @white;
+      text-decoration: none;
+      width: 100%;
+      letter-spacing: 0;
+      
+      &:hover {
+        color: @dkcyan;
+      }
+    }
+  }
+  
+  
+}
+
+
+.quizContainer {
+	min-height: 600px;
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+  background: @ltgrey;
+}
+
+.detailContainer {
+	margin: 0;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.list {
+	overflow: auto;
+	margin: 0;
+	padding: 20px;
+	flex: 1 1 0;
+	min-height: 100%;
+  background-color: @dkgrey;
+  background-image: url(../images/grey_squares2.png);
+  color: @ltgrey;
+  
+  h1 {
+    color: @dkyellow;
+  }
+}
+
+.detailWrapper {
+	margin: 0;
+	padding: 20px;
+	flex: 1 1 0;
+	min-height: 100%;
+	background: @ltgrey;
+  border-left: 4px solid @dkyellow2;
+}
+
+.bold {
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px dashed black;
+}
+
+.blue {     
+	color: @dkcyan;
+}
+
+.orange {   
+	color: @false;
+}
+
+.mySaveModal {
+	position: fixed;
+	top: 80px;
+	left: 80px;
+	height: 110px;
+	width: 30%;
+	background-color: @dkcyan;
+  color: @dkgrey2;
+  font-weight: bold;
+	border: 1px solid @dkcyan;
+	margin: 0 auto;
+  padding: 2% 1%;
+  
+  input {
+    width: 90%;
+    height: 25px;
+    color: @dkgrey;
+    padding-left: 2%;
+    border: 0;
+    margin: 1.5% 3%;
+  }
+  
+  button {
+    margin: 1.5% 3%;
+  }
+}
+
+button {
+  background-color: @dkyellow;
+  border: 2px solid @dkyellow2;
+  padding: 5px;
+  margin: 1%;
+  font-family: @font;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, @dkcyan, #ccc);
+}
+

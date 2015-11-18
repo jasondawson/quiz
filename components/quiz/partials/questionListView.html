@@ -2,8 +2,8 @@
 	<p ng-click="setQuestion(question)"><span ng-class="{'bold': question === currentQuestion}">{{question.id}}. {{question.title}} </span></p>
 
 	<span ng-if="results.done || obj.instant">
-		<span ng-if="results[question.id]"><i class="fa fa-check fa-lg green"></i></span>
-	<span ng-if="!results[question.id] && answers[question.id]"><i class="fa fa-times fa-lg red"></i></span>
+		<span ng-if="results[question.id]"><i class="fa fa-check fa-lg blue"></i></span>
+	<span ng-if="!results[question.id] && answers[question.id]"><i class="fa fa-times fa-lg orange"></i></span>
 	</span>
 	<span> {{answers[question.id]}} </span>
 </div>
